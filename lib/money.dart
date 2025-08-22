@@ -65,6 +65,10 @@ class _MOneyManagementState extends State<MOneyManagement>
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
