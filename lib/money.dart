@@ -10,9 +10,41 @@ class MOneyManagement extends StatefulWidget {
 class _MOneyManagementState extends State<MOneyManagement>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  @override
   initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+  }
+
+  void _showFAButton(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.green),
+                ),
+                onPressed: () {},
+                child: Text("add earning"),
+              ),
+
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.red),
+                ),
+                onPressed: () {},
+                child: Text("add Expense"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -66,7 +98,7 @@ class _MOneyManagementState extends State<MOneyManagement>
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => _showFAButton(context),
         child: Icon(Icons.add),
       ),
     );
