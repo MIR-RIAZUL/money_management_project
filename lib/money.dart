@@ -20,6 +20,18 @@ class _MOneyManagementState extends State<MOneyManagement> {
             color: Colors.white,
           ),
         ),
+        bottom: TabBar(
+          tabs: [
+            Tab(
+              text: "Earning",
+              icon: Icon(Icons.arrow_upward, color: Colors.white),
+            ),
+            Tab(
+              text: "Expanse",
+              icon: Icon(Icons.arrow_downward, color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
