@@ -42,6 +42,64 @@ class _MOneyManagementState extends State<MOneyManagement>
           ],
         ),
       ),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              _buildsummarycard(
+                title: 'Earning',
+                value: 2000,
+                color: Colors.green,
+              ),
+              _buildsummarycard(
+                title: 'Expance',
+                value: 100,
+                color: Colors.redAccent,
+              ),
+              _buildsummarycard(
+                title: 'balence',
+                value: 2000,
+                color: Colors.blue,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
+}
+
+Widget _buildsummarycard({
+  required String title,
+  required double value,
+  required Color color,
+}) {
+  return Expanded(
+    child: Card(
+      color: color,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              value.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
