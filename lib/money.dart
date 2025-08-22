@@ -7,11 +7,19 @@ class MOneyManagement extends StatefulWidget {
   State<MOneyManagement> createState() => _MOneyManagementState();
 }
 
-class _MOneyManagementState extends State<MOneyManagement> {
+class _MOneyManagementState extends State<MOneyManagement>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         title: Text(
           "Money Management",
           style: TextStyle(
@@ -21,6 +29,7 @@ class _MOneyManagementState extends State<MOneyManagement> {
           ),
         ),
         bottom: TabBar(
+          controller: _tabController,
           tabs: [
             Tab(
               text: "Earning",
