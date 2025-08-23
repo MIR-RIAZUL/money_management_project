@@ -157,7 +157,7 @@ class _MOneyManagementState extends State<MOneyManagement>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CircleAvatar(
-                            radius: 40,
+                            radius: 39,
                             backgroundImage: NetworkImage(
                               "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/498692148_2403836573324104_1909885292037843185_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeEVoUPyQnEvaf0hWgVl0Rh5QILtjBdjuYhAgu2MF2O5iPq5jpCoadpblyZnf4v4lcTRh1uy1iM4hBN7L2dkd4Ab&_nc_ohc=H3q565fx_YgQ7kNvwGvdBQG&_nc_oc=Adkdn0LQolkR1xlqEIQEF-Efx7nDtijEstoZOi4qEOf-YUQHuajQugz-SF9xCRNc1CY&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=GyR5ExO4TXsMJBa5fpU7Cg&oh=00_AfVob-7ivuLLT36KPX_j26DOlnoZi1AhN0tvBjqZsFQV1w&oe=68AFB9CC",
                             ),
@@ -182,7 +182,7 @@ class _MOneyManagementState extends State<MOneyManagement>
                       ),
                     ),
                     Positioned(
-                      top: 20,
+                      top: 5,
                       right: 16,
                       child: Container(
                         padding: EdgeInsets.all(8),
@@ -201,7 +201,7 @@ class _MOneyManagementState extends State<MOneyManagement>
                       ),
                     ),
                     Positioned(
-                      top: 60,
+                      top: 53,
                       right: 16,
                       child: Container(
                         padding: EdgeInsets.all(8),
