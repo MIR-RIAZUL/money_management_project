@@ -29,7 +29,10 @@ class _MOneyManagementState extends State<MOneyManagement>
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(Colors.green),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                  _showForm(isEarning: true);
+                },
                 child: Text("add earning"),
               ),
 
@@ -39,6 +42,50 @@ class _MOneyManagementState extends State<MOneyManagement>
                 ),
                 onPressed: () {},
                 child: Text("add Expense"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showForm({required bool isEarning}) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Text(
+                isEarning ? "Add Earning" : "Add Expense",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Title",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: "amount",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: isEarning ? Colors.green : Colors.red,
+                ),
+                onPressed: () {},
+                child: Text(isEarning ? "Add earning" : " add expense"),
               ),
             ],
           ),
