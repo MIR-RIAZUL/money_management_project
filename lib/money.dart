@@ -41,7 +41,7 @@ class _MOneyManagementState extends State<MOneyManagement>
             children: [
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                  backgroundColor: WidgetStateProperty.all(Colors.green),
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -51,7 +51,7 @@ class _MOneyManagementState extends State<MOneyManagement>
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  backgroundColor: WidgetStateProperty.all(Colors.red),
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -373,7 +373,7 @@ Widget _buildlist(
       return Card(
         child: ListTile(
           leading: CircleAvatar(
-            backgroundColor: color.withOpacity(0.2),
+            backgroundColor: color.withOpacity(0.5),
             child: Icon(isEarning ? Icons.arrow_upward : Icons.arrow_downward),
           ),
           title: Text(items[index]["title"]),
