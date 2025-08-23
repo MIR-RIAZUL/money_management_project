@@ -10,6 +10,7 @@ class MOneyManagement extends StatefulWidget {
 class _MOneyManagementState extends State<MOneyManagement>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
   @override
   initState() {
     super.initState();
@@ -40,7 +41,10 @@ class _MOneyManagementState extends State<MOneyManagement>
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(Colors.red),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                  _showForm(isEarning: false);
+                },
                 child: Text("add Expense"),
               ),
             ],
@@ -51,6 +55,9 @@ class _MOneyManagementState extends State<MOneyManagement>
   }
 
   void _showForm({required bool isEarning}) {
+    TextEditingController titleEditingController = TextEditingController();
+    TextEditingController amountEditingController = TextEditingController();
+    DateTime entryDate = DateTime.now();
     showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -64,6 +71,7 @@ class _MOneyManagementState extends State<MOneyManagement>
               ),
               SizedBox(height: 10),
               TextField(
+                controller: titleEditingController,
                 decoration: InputDecoration(
                   labelText: "Title",
                   border: OutlineInputBorder(),
@@ -72,6 +80,7 @@ class _MOneyManagementState extends State<MOneyManagement>
               SizedBox(height: 20),
 
               TextField(
+                controller: amountEditingController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: "amount",
